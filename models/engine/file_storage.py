@@ -24,6 +24,10 @@ class FileStorage:
             for key, val in temp.items():
                 temp[key] = val.to_dict()
             json.dump(temp, f)
+    
+    def all(self):
+                """Returns a dictionary of models currently in storage"""
+                        return FileStorage.__objects
 
     def reload(self):
         """Loads storage dictionary from file"""
